@@ -1,0 +1,180 @@
+<!DOCTYPE html><!--
+|                   _
+|    /|           / / |\
+|   / |          / /  | \
+|  / /          / /    \ \
+|  \ \    ___  / /     / /
+|   \ |  /   \/ /     | /
+|    \| |      /      |/
+|        \____/
+|
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Chrome Tabs - Chrome-style Tabs in HTML/CSS/ES6</title>
+    <meta name="description" content="Chrome-style tabs in HTML/CSS/JS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="demo/css/demo.css" rel="stylesheet">
+    <link href="css/chrome-tabs.css" rel="stylesheet">
+    <link href="css/chrome-tabs-dark-theme.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="surface">
+      <div class="mock-browser">
+        <div class="chrome-tabs" style="--tab-content-margin: 9px">
+          <div class="chrome-tabs-content">
+            <div class="chrome-tab">
+              <div class="chrome-tab-dividers"></div>
+              <div class="chrome-tab-background">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="chrome-tab-geometry-left" viewBox="0 0 214 36"><path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"/></symbol><symbol id="chrome-tab-geometry-right" viewBox="0 0 214 36"><use xlink:href="#chrome-tab-geometry-left"/></symbol><clipPath id="crop"><rect class="mask" width="100%" height="100%" x="0"/></clipPath></defs><svg width="52%" height="100%"><use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"/></svg><g transform="scale(-1, 1)"><svg width="52%" height="100%" x="-100%" y="0"><use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"/></svg></g></svg>
+              </div>
+              <div class="chrome-tab-content">
+                <div class="chrome-tab-favicon" style="background-image: url('demo/images/google-favicon.ico')"></div>
+                <div class="chrome-tab-title">New Tab</div>
+                <div class="chrome-tab-drag-handle"></div>
+                <div class="chrome-tab-close"></div>
+              </div>
+            </div>
+            
+              
+              
+              
+                
+                
+                
+                
+								
+              
+							
+						
+					
+        </div>
+				
+          <div class="chrome-tabs-bottom-bar"></div>
+					
+          <!-- Styles to prevent flash after JS initialization -->
+          <style>
+            .chrome-tabs .chrome-tab {
+              width: 258px
+            }
+
+            .chrome-tabs .chrome-tab:nth-child(1) {
+              transform: translate3d(0px, 0, 0)
+            }
+
+            .chrome-tabs .chrome-tab:nth-child(2) {
+              transform: translate3d(239px, 0, 0)
+            }
+          </style>
+        </div>
+        <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
+        <div class="mock-browser-content">
+					
+					<form>
+				<button data-page-back type="text"><img src="back-arrow.png" width="10" height="12"></button>	<label for="omnibar"></label>
+<input type="url" id="omnibar" name="omnibar" onkeypress="handle(event)"></input></form><button data-add-tab  ><img src="New-Tab.png" width="19" height="19"></button>
+					 
+					
+			<script>
+    function handle(e){
+        if(e.keyCode === 13){
+            e.preventDefault(); // Ensure it is only this code that runs
+
+            alert("Enter was pressed was pressed");
+        }
+    }
+</script>	
+					
+       
+        </div>
+				 
+				<div style="height:90vh">
+				<iframe width="100%" style="height:100%" src="https://google.com" frameBorder="0px"></iframe>
+				</div>
+      </div>
+
+
+      <style>
+        .made-by {
+          margin-top: auto;
+          --active-background-color: #dee1e6;
+          color: #848890;
+          font-size: 14px;
+          font-family: Avenir, "Avenir Next", "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+          text-align: center;
+          -webkit-font-smoothing: antialiased;
+          font-weight: bold;
+        }
+
+        html.dark-theme .made-by {
+          --active-background-color: #242628;
+          color: #838488;
+        }
+
+        .made-by-link { color: inherit; text-decoration: none; display: inline-block; padding: 0em; border-radius: 0em }
+        .made-by-link:hover:not(:active) { opacity: .7 }
+        .made-by-link:hover:active { background: var(--active-background-color) }
+        .made-by-logo { display: block; height: 3.5em; width: 7em; margin: 0 auto .75em }
+      </style>
+
+      <div class="made-by">
+        
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/draggabilly@2.2.0/dist/draggabilly.pkgd.min.js"></script>
+    <script src="js/chrome-tabs.js"></script>
+    <script>
+      var el = document.querySelector('.chrome-tabs')
+      var chromeTabs = new ChromeTabs()
+
+      chromeTabs.init(el)
+
+      el.addEventListener('activeTabChange', ({ detail }) => console.log('Active tab changed', detail.tabEl))
+      el.addEventListener('tabAdd', ({ detail }) => console.log('Tab added', detail.tabEl))
+      el.addEventListener('tabRemove', ({ detail }) => console.log('Tab removed', detail.tabEl))
+
+      document.querySelector('button[data-add-tab]').addEventListener('click', _ => {
+        chromeTabs.addTab({
+          title: 'New Tab',
+          favicon: false
+        })
+      })
+
+      document.querySelector('button[data-add-background-tab]').addEventListener('click', _ => {
+        chromeTabs.addTab({
+          title: 'New Tab',
+          favicon: false
+        }, {
+          background: true
+        })
+      })
+
+      document.querySelector('button[data-remove-tab]').addEventListener('click', _ => {
+        chromeTabs.removeTab(chromeTabs.activeTabEl)
+      })
+
+      document.querySelector('button[data-theme-toggle]').addEventListener('click', _ => {
+        if (el.classList.contains('chrome-tabs-dark-theme')) {
+          document.documentElement.classList.remove('dark-theme')
+          el.classList.remove('chrome-tabs-dark-theme')
+        } else {
+          document.documentElement.classList.add('dark-theme')
+          el.classList.add('chrome-tabs-dark-theme')
+        }
+      })
+
+      window.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 't') {
+          chromeTabs.addTab({
+            title: 'New Tab',
+            favicon: false
+          })
+        }
+      })
+    </script>
+		
+  </body>
+</html>
