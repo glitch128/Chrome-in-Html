@@ -96,26 +96,42 @@
 
                             <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
               <div class="mock-browser-content">
-        <div class="omnibar_area">
-                <button class="button_bk" data-page-back><span class="material-icons">
+                <table>
+                  <tr>
+                    <td>
+                    <button class="button_bk" data-page-back><span class="material-icons">
 									arrow_back
 								</span>
 								</button>
-					<button class="button_fw" data-page-forward>
+              </td>
+              <td>
+                <button class="button_fw" data-page-forward>
 						<span  class="material-icons">
 						arrow_forward 
 						</span>
 					</button>
-					<button class="button_rld" data-page-reload>
+              </td>
+              <td>
+                <button class="button_rld" data-page-reload>
 						<span class="material-icons">
 							refresh
 						</span>
 					</button> 
+              </td>
+              <td>
+                <label for="omnibar"></label>
+                  <input type="url" class="omnibar" id="omnibar" value="https://google.com"></input>
+              </td>
+                </tr>
+              </table>
+        <div class="omnibar_area">
+                
+					
+					
 							
 						<img class="omnibar_img" src="images/Google.png" width="23px" height="23px"/>
 								
-                   <label for="omnibar"></label>
-                  <input type="url" class="omnibar" id="omnibar" value="https://google.com"></input>
+                   
                 <img class="dropdown_img" src="images/menu.png" width="5px" height="23px">
         
          <button class="button_dark_mode" data-theme-toggle><img src="images/Dark-mode.png" width="20px" height="20px"/></button>
