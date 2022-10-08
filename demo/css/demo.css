@@ -25,7 +25,7 @@ html.dark-theme {
   justify-content: center;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 100px) {
   .surface {
     padding: 0px;
   }
