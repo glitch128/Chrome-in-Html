@@ -271,4 +271,6 @@ table {
 	cursor: default;
 }
 
-.nav {width: 10px;}
+.nav {
+  width: 10px;
+}
