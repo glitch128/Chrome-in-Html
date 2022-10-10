@@ -184,8 +184,8 @@ html.dark-theme button:focus {
 .omnibar_img {
 	position: absolute;
 	z-index: 2;
-	left: 10%;
-	padding: 5px 0px 0px 0px;
+	left: 150px;
+	padding: 8.5px 0px 0px 0px;
 }
 
 .webview {
@@ -249,7 +249,7 @@ html.dark-theme button:focus {
 .show {display:block;}
 
 .dropdown_img {
-	z-index: 4;
+	z-index: -1;
 	pointer-events: none;
 }
 
@@ -277,5 +277,5 @@ table {
 }
 
 td .buttons_nav {
-  max-width: 5px;
+	
 }
