@@ -18,7 +18,7 @@
 		"src": "icons/Chrome-128.png",
 		"sizes": "128x128",
 		"type": "image/png",
-		"purpose": "maskable";
+		"purpose": "maskable"
 	}, {
 		"src": "icons/Chrome-256.png",
 		"sizes": "256x256",
