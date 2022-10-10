@@ -275,3 +275,7 @@ table {
 .nav {
   width: 90%;
 }
+
+td .buttons_nav {
+  width: 5px;
+}
