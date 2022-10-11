@@ -118,7 +118,7 @@ button:focus {
 .buttons button {
   margin: .5em;
 }
-embed {
+iframe {
 	position: relative;
 	display: inline;
 	width: 100%;
@@ -194,12 +194,14 @@ html.dark-theme button:focus {
 
 /* Dropdown Button */
 .dropbtn {
-  color: white;
-  padding: 1px 16px 4px 16px;
+  color: #d21414;
+  padding: 4px 5px 0px 5px;
   font-size: 10px;
   border: none;
-  cursor: default;
-
+  cursor: pointer;
+	position: absolute;
+	right: 1px;
+	top: 6px;
 }
 
 /* Dropdown button on hover & focus */
@@ -211,7 +213,7 @@ html.dark-theme button:focus {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: absolute;
-	right: .1px;
+	right: 1px;
   display: inline-block;
 	z-index: 5;
 }
