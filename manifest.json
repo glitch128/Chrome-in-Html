@@ -1,5 +1,5 @@
 {
-	"name": "Chrome",
+	"name": "Google Chrome",
 	"description": "Google Chrome",
 	"start_url": "index.html",
 	"display": "minimal-ui",
