@@ -98,8 +98,6 @@ button {
 }
 
 
-}
-
 @supports (-webkit-overflow-scrolling: touch) {
   /* Prevent double tap to zoom on iOS https://stackoverflow.com/a/47131647 */
   button {
