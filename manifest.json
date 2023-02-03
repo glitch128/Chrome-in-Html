@@ -2,6 +2,7 @@
 	"name": "Google Chrome",
 	"description": "Google Chrome",
 	"start_url": "index.html",
+	"theme_color":"#dee1e6",
 	"display": "minimal-ui",
 	"display_override": ["window-controls-overlay"],
 	"icons": [{
