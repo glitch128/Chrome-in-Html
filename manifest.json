@@ -1,5 +1,6 @@
 {
 	"name": "Google Chrome",
+	"short_name": "Chrome",
 	"description": "Google Chrome",
 	"start_url": "/",
 	"theme_color":"#dee1e6",
