@@ -2,7 +2,7 @@
 	"name": "Google Chrome",
 	"short_name": "Chrome",
 	"description": "Google Chrome",
-	"start_url": "/",
+	"start_url": "/Chrome-in-HTML",
 	"theme_color":"#dee1e6",
 	"display": "minimal-ui",
 	"display_override": ["window-controls-overlay"],
